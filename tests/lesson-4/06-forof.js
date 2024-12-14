@@ -43,3 +43,31 @@ for (let num of arr) {
 }
 
 console.log(uniqueElements);
+
+
+// cách 2
+
+let arr = [1, 2, 3, 2, 5, 3];
+
+function findUniqueElements(arr) {
+    let result = [];
+    for (let num of arr) {
+        // count++
+        let count = 0;
+        // Kiem tra so lan xuat hien cua phan tu trong arr
+        for (let x of arr) {
+            if (num === x) {
+                count++;
+            }
+        }
+
+        // Kiem tra neu phan tu chi xuat hien 1 lan (count = 1) thi push vao mang result  
+        if (count === 1) {
+            result.push(num);
+        }
+    }
+
+    return result;
+}
+let uniqueElements = findUniqueElements(arr);
+console.log(uniqueElements);
